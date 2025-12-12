@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from rest_framework import generics , status
 from rest_framework.response import Response
-from .models import Course , User , Exercise
-from .serializers import CourseSerializer , UserSerializer , ExerciseSerializer
+from .models import Course , User , Exercise , Level
+from .serializers import CourseSerializer , UserSerializer , ExerciseSerializer , LevelSerializer
 from rest_framework.generics import DestroyAPIView
 
 
@@ -18,6 +18,12 @@ class UserListCreate(generics.ListCreateAPIView):
     serializer_class = UserSerializer
     def delete(self , request , *args , **kwargs):
         User.objects.all().delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+class LevelListCreate(generics.ListCreateAPIView):
+    queryset = Level.objects.all()
+    serializer_class = LevelSerializer
+    def delete(self , request , *args , **kwargs):
+        Level.objects.all().delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 class ExerciseListCreate(generics.ListCreateAPIView):
@@ -35,6 +41,10 @@ class CourseDeleteView(generics.RetrieveDestroyAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     lookup_field = "pk"
+class LevelDeleteView(generics.RetrieveDestroyAPIView):
+    queryset = Level.objects.all()
+    serializer_class = LevelSerializer
+    lookup_field = "pk"
 class UserUpdateView(generics.RetrieveUpdateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -43,4 +53,8 @@ class UserUpdateView(generics.RetrieveUpdateAPIView):
 class CourseUpdateView(generics.RetrieveUpdateAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
+    lookup_field = "pk"
+class LevelUpdateView(generics.RetrieveUpdateAPIView):
+    queryset = Level.objects.all()
+    serializer_class = LevelSerializer
     lookup_field = "pk"

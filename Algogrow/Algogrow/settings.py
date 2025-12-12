@@ -123,3 +123,6 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
+AUTH_USER_MODEL = "api.User"
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
