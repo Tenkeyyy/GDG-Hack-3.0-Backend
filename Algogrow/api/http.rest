@@ -1,0 +1,28 @@
+
+POST http://127.0.0.1:8000/login
+Content-Type: application/json
+
+{"username" : "admin" , "password" : "M06122006"}
+
+
+###
+
+POST http://127.0.0.1:8000/signup
+Content-Type: application/json
+
+{"username" : "DUDE" , "password" : "Password123!" , "email" : "DUDE@gmail.com" , "age" : 18}
+
+###
+
+GET http://127.0.0.1:8000/test_token
+Content-Type: application/json
+Authorization: Token e495866aae68812ebe8e436eb5b1b9cc8b3e6230
+
+{}
+###
+GET http://127.0.0.1:8000/get_stats
+Content-Type: application/json
+Authorization: Token e495866aae68812ebe8e436eb5b1b9cc8b3e6230
+
+{}
+###
