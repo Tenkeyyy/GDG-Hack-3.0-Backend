@@ -2,7 +2,7 @@
 POST http://127.0.0.1:8000/login
 Content-Type: application/json
 
-{"username" : "admin" , "password" : "M06122006"}
+{"username" : "admin" , "password" : "Password123!"}
 
 
 ###
@@ -10,19 +10,51 @@ Content-Type: application/json
 POST http://127.0.0.1:8000/signup
 Content-Type: application/json
 
-{"username" : "DUDE" , "password" : "Password123!" , "email" : "DUDE@gmail.com" , "age" : 18}
+{"username" : "DUDE" , "password" : "Password123!" , "email" : "Dude@gmail.com" , "age" : 18}
 
 ###
 
 GET http://127.0.0.1:8000/test_token
 Content-Type: application/json
-Authorization: Token e495866aae68812ebe8e436eb5b1b9cc8b3e6230
+Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
 
 {}
 ###
 GET http://127.0.0.1:8000/get_stats
 Content-Type: application/json
-Authorization: Token e495866aae68812ebe8e436eb5b1b9cc8b3e6230
+Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
+
+{}
+###
+GET http://127.0.0.1:8000/friend_requests/
+Content-Type: application/json
+Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
+
+{}
+###
+POST http://127.0.0.1:8000/send_friend_request/5/
+Content-Type: application/json
+Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
+
+
+{}
+###
+GET http://127.0.0.1:8000/my_friends/
+Content-Type: application/json
+Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
+
+
+{}
+###
+PATCH http://127.0.0.1:8000/accept_friend_request/2/
+Content-Type: application/json
+Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
+
+{}
+###
+DELETE http://127.0.0.1:8000/decline_friend_request/8/
+Content-Type: application/json
+Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
 
 {}
 ###
