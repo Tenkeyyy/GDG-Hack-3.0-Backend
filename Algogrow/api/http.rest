@@ -2,7 +2,7 @@
 POST http://127.0.0.1:8000/login
 Content-Type: application/json
 
-{"username" : "admin" , "password" : "Password123!"}
+{"email" : "Fayza@gmail.com" , "password" : "Password123!"}
 
 
 ###
@@ -10,13 +10,17 @@ Content-Type: application/json
 POST http://127.0.0.1:8000/signup
 Content-Type: application/json
 
-{"username" : "DUDE" , "password" : "Password123!" , "email" : "Dude@gmail.com" , "age" : 18}
+{"username" : "Fayza" , "password" : "Password123!" , "email" : "Fayza@gmail.com" , "age" : 11}
 
 ###
 
 GET http://127.0.0.1:8000/test_token
 Content-Type: application/json
-Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
+Authorization: Token 
+c59d51645d97a29bc4a3b1b733113f11bf6fb946 Abdou
+35b097038005dfa768137757e1d40bfdb85e81f3 Ali
+8feebf0e6ea9fa9ac4e399a4d8bbfc907881797f Fayza
+
 
 {}
 ###
