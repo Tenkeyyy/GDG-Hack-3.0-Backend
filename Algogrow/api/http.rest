@@ -2,7 +2,7 @@
 POST http://127.0.0.1:8000/login
 Content-Type: application/json
 
-{"email" : "Fayza@gmail.com" , "password" : "Password123!"}
+{"email" : "Loubna@gmail.com" , "password" : "Password123!"}
 
 
 ###
@@ -17,16 +17,13 @@ Content-Type: application/json
 GET http://127.0.0.1:8000/test_token
 Content-Type: application/json
 Authorization: Token 
-c59d51645d97a29bc4a3b1b733113f11bf6fb946 Abdou
-35b097038005dfa768137757e1d40bfdb85e81f3 Ali
-8feebf0e6ea9fa9ac4e399a4d8bbfc907881797f Fayza
 
 
 {}
 ###
-GET http://127.0.0.1:8000/get_stats
+GET http://127.0.0.1:8000/Users
 Content-Type: application/json
-Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
+Authorization: Token 00d6ac79bcd4ce5c623a1246b1e95145529c8e52
 
 {}
 ###
@@ -36,23 +33,23 @@ Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
 
 {}
 ###
-POST http://127.0.0.1:8000/send_friend_request/5/
+POST http://127.0.0.1:8000/send_friend_request/10/
 Content-Type: application/json
-Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
+Authorization: Token c59d51645d97a29bc4a3b1b733113f11bf6fb946
 
 
 {}
 ###
 GET http://127.0.0.1:8000/my_friends/
 Content-Type: application/json
-Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
+Authorization: Token c59d51645d97a29bc4a3b1b733113f11bf6fb946
 
 
 {}
 ###
-PATCH http://127.0.0.1:8000/accept_friend_request/2/
+PATCH http://127.0.0.1:8000/accept_friend_request/4/
 Content-Type: application/json
-Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
+Authorization: Token 00d6ac79bcd4ce5c623a1246b1e95145529c8e52
 
 {}
 ###
@@ -62,3 +59,8 @@ Authorization: Token 0473763117c883e8f3265d065c6201ad0fb8e580
 
 {}
 ###
+
+GET http://127.0.0.1:8000/Badge/11/
+Content-Type: aaplication/json 
+
+{}

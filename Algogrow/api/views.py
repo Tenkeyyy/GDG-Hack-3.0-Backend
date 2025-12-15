@@ -84,10 +84,10 @@ def accept_friend_request(request, pk):
         friendship = Friendship.objects.get(id=pk, to_user=request.user, is_accepted=False)
     except Friendship.DoesNotExist:
         return Response({"error": "Friend request not found"}, status=status.HTTP_404_NOT_FOUND)
-    added = friendship.to_user
+    sender = friendship.from_user
     friendship.delete()
-    request.user.friends.add(added)
-    added.friends.add(request.user)
+    request.user.friends.add(sender)
+    sender.friends.add(request.user)
     return Response({"success" :"Friend has been added successfuly !"} , status=status.HTTP_202_ACCEPTED)
 
 
@@ -102,7 +102,6 @@ def decline_friend_request(request, pk):
 
     friendship.delete()
     return Response({"message": "Friend request declined"}, status=status.HTTP_204_NO_CONTENT)
-
 
 class CourseListCreate(generics.ListCreateAPIView):
     queryset = Course.objects.all()
